@@ -1,4 +1,6 @@
 ﻿
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using BlocNotasCurso.Model;
 using BlocNotasCurso.Util;
@@ -17,19 +19,54 @@ namespace BlocNotasCurso.Service
         }
 
 
-        public Task<Usuario> ValidarUsuario(Usuario us)
+        public async Task<Usuario> ValidarUsuario(Usuario us)
         {
-            throw new System.NotImplementedException();
+            var tabla = client.GetTable<Usuario>();
+            var data = await tabla.CreateQuery().
+                Where(o => o.Username == us.Username && o.Password == us.Password).
+                ToListAsync();
+
+            return !data.Any() ? null : data[0];
         }
 
-        public Task<Usuario> AddUsuario(Usuario us)
+        public async Task<Usuario> AddUsuario(Usuario us)
         {
-            throw new System.NotImplementedException();
+            var tabla = client.GetTable<Usuario>();
+            var data = await tabla.CreateQuery().Where(o => o.Username == us.Username).ToListAsync();
+
+            if (data.Any())
+                throw new Exception("Usuario ya registrado");
+
+            try
+            {
+                await tabla.InsertAsync(us);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al registrar el usario");
+            }
+
+            return us;
         }
 
-        public Task<Usuario> UpdateUsuario(Usuario us, string id)
+        public async Task<Usuario> UpdateUsuario(Usuario us, string id)
         {
-            throw new System.NotImplementedException();
+            var tabla = client.GetTable<Usuario>();
+            var data = await tabla.CreateQuery().Where(o => o.Username == us.Username).ToListAsync();
+
+            if (data.Any())
+                throw new Exception("Usuario ya registrado");
+
+            try
+            {
+                await tabla.InsertAsync(us);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al registrar el usario");
+            }
+
+            return us;
         }
 
         public Task DeleteUsuario(string id)
