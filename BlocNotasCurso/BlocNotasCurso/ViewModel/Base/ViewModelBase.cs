@@ -6,10 +6,15 @@ namespace BlocNotasCurso.ViewModel.Base
 {
     public class ViewModelBase : IViewModel
     {
-        // 
         private bool _isBusy;
         private double _opacity;
         private bool _enabled;
+
+        public ViewModelBase()
+        {
+            Opacity = 1;
+            Enabled = true;
+        }
 
         // cada vez que una propiedad se lanza el evento
         public event PropertyChangedEventHandler PropertyChanged;
@@ -19,19 +24,26 @@ namespace BlocNotasCurso.ViewModel.Base
         public bool IsBusy
         {
             get { return _isBusy; }
-            set { _isBusy = value; }
+            set
+            {
+                Opacity = value ? 0.5 : 1;
+                Enabled = !value;
+                SetProperty(ref _isBusy, value);
+            }
         }
 
         public double Opacity
         {
             get { return _opacity; }
-            set { _opacity = value; }
+            set { SetProperty(ref _opacity, value); }
         }
 
         public bool Enabled
         {
             get { return _enabled; }
-            set { SetProperty(ref _enabled, value); }
+
+            set
+            { SetProperty(ref _enabled, value); }
         }
 
         // CallerMemberName es el nombre del origen de la llamada
@@ -48,12 +60,15 @@ namespace BlocNotasCurso.ViewModel.Base
 
         protected void OnPropertyChanged([CallerMemberName]string nombre = null)
         {
-            throw new NotImplementedException();
+            var handler = PropertyChanged;
+
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(nombre));
         }
 
         public void SetState<T>(Action<T> action) where T : class, IViewModel
         {
-            throw new NotImplementedException();
+            action(this as T);
         }
     }
 }
