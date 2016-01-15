@@ -36,17 +36,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Factorias\INavigator.cs" />
+    <Compile Include="Factorias\IPage.cs" />
     <Compile Include="Factorias\IViewFactory.cs" />
+    <Compile Include="Factorias\Navigator.cs" />
+    <Compile Include="Factorias\PageProxy.cs" />
     <Compile Include="Factorias\ViewFactory.cs" />
     <Compile Include="Model\Bloc.cs" />
     <Compile Include="Model\Nota.cs" />
     <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Modulo\AutofacModule.cs" />
+    <Compile Include="Modulo\BlocNotasModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\IServicioDatos.cs" />
     <Compile Include="Service\ServicioDatos.cs" />
     <Compile Include="Util\Cadenas.cs" />
     <Compile Include="ViewModel\Base\IViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModel\GeneralViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
