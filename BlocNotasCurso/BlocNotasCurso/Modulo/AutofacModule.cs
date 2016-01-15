@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Autofac;
 using BlocNotasCurso.Factorias;
 using BlocNotasCurso.Service;
+using BlocNotasCurso.ViewModel.Base;
 using Xamarin.Forms;
 
 namespace BlocNotasCurso.Modulo
@@ -15,8 +16,8 @@ namespace BlocNotasCurso.Modulo
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<ViewFactory>().
-                As<IViewFactory>().
-                SingleInstance();
+                 As<IViewFactory>().
+                 SingleInstance();
             builder.RegisterType<Navigator>().
                 As<INavigator>().
                 SingleInstance();

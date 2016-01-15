@@ -1,6 +1,8 @@
 ﻿using System;
 using Autofac;
 using BlocNotasCurso.Service;
+using BlocNotasCurso.View;
+using BlocNotasCurso.ViewModel;
 using Xamarin.Forms;
 
 namespace BlocNotasCurso.Modulo
@@ -12,6 +14,14 @@ namespace BlocNotasCurso.Modulo
             builder.RegisterType<ServicioDatos>().
                 As<IServicioDatos>().
                 SingleInstance();
+
+            builder.RegisterType<Login>();
+            builder.RegisterType<Principal>();
+            builder.RegisterType<Registro>();
+            builder.RegisterType<LoginViewModel>();
+            builder.RegisterType<PrincipalViewModel>();
+            builder.RegisterType<RegistroViewModel>();
+
             // action es un delegado, es un objeto que se le pasa para operar sobre otro objeto
             // func es una funcion
 
