@@ -1,9 +1,9 @@
 ﻿using Xamarin.Forms;
 
-namespace BlocNotasCurso.Factorias
+/*namespace BlocNotasCurso.Factorias
 {
     public interface IPage
     {
         INavigation Navigation { get; }
     }
-}
+}*/

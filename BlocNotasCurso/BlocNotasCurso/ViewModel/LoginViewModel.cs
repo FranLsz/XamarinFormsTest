@@ -15,7 +15,7 @@ namespace BlocNotasCurso.ViewModel
 
         public string TituloIniciar { get { return "Iniciar sesión"; } }
         public string TituloRegistro { get { return "Nuevo usuario"; } }
-        public string TituloLogin { get { return "Nombre de usuario"; } }
+        public string TituloUsername { get { return "Nombre de usuario"; } }
         public string TituloPassword { get { return "Contraseña"; } }
 
         private Usuario _usuario = new Usuario();
@@ -46,8 +46,9 @@ namespace BlocNotasCurso.ViewModel
             try
             {
                 IsBusy = true;
-                var us = await _servicio.ValidarUsuario(_usuario);
-                if (us != null)
+                //var sd = new ServicioDatos();
+                // var us = await sd.ValidarUsuario(_usuario);
+                if (true)
                 {
                     await _navigator.PopToRootAsync();
                     await _navigator.PushAsync<PrincipalViewModel>(viewModel =>
@@ -59,7 +60,10 @@ namespace BlocNotasCurso.ViewModel
                 {
                     var qfd = "";
                 }
-                // TODO aqui navegariamos a la pantalla principal o dariamos error
+            }
+            catch (Exception ex)
+            {
+                var ee = ex.Message;
             }
             finally
             {

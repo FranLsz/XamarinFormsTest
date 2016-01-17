@@ -10,9 +10,11 @@ namespace BlocNotasCurso.Factorias
 {
     public class ViewFactory : IViewFactory
     {
+        // Aqui se guarda el mapeado entre ViewModel - Page
         readonly IDictionary<Type, Type> _map = new Dictionary<Type, Type>();
 
-        // Es la informacion de donde recuperar todos los objetos
+        // Es la informacion de donde recuperar todos los objetos, es necesario para
+        // obtener Page a partir de su Type
         private readonly IComponentContext _componentContext;
 
         public ViewFactory(IComponentContext componentContext)
@@ -20,6 +22,7 @@ namespace BlocNotasCurso.Factorias
             _componentContext = componentContext;
         }
 
+        // Se asocia un ViewModel con Page
         public void Register<TViewModel, TView>() where TViewModel : class, IViewModel where TView : Page
         {
             _map[typeof(TViewModel)] = typeof(TView);

@@ -6,12 +6,12 @@ namespace BlocNotasCurso.Factorias
 {
     public interface IViewFactory
     {
-        // Registra ViewModel con Page
+        // Registra un ViewModel con su Page
         void Register<TViewModel, TView>()
             where TViewModel : class, IViewModel
             where TView : Page;
 
-        // Devuelve Page a partir de un ViewModel
+        // Devuelve Page a partir de su ViewModel
         Page Resolve<TViewModel>(Action<TViewModel> action = null)
             where TViewModel : class, IViewModel;
 

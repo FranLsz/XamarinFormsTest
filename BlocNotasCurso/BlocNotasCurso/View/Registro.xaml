@@ -4,14 +4,16 @@
              x:Class="BlocNotasCurso.View.Registro">
 
   <StackLayout>
-    <Label Text="Username"></Label>
+    
+    <Label Text="{Binding UsernameLabel}"></Label>
     <Entry Text="{Binding Usuario.Username}"></Entry>
-    <Label Text="Password"></Label>
+    <Label Text="{Binding PasswordLabel}"></Label>
     <Entry Text="{Binding Usuario.Password}"></Entry>
-    <Label Text="Nombre"></Label>
+    <Label Text="{Binding NombreLabel}"></Label>
     <Entry Text="{Binding Usuario.Nombre}"></Entry>
-    <Label Text="Apellidos"></Label>
+    <Label Text="{Binding ApellidosLabel}"></Label>
     <Entry Text="{Binding Usuario.Apellidos}"></Entry>
+    
     <Button Text="Nuevo usuario" Command="{Binding cmdRegistro}"></Button>
   </StackLayout>
 

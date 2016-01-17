@@ -4,14 +4,10 @@ namespace BlocNotasCurso.Model
 {
     public class Bloc
     {
-        public String Id { get; set; }
-
-        public String IdUsuario { get; set; }
-
-        public String Nombre { get; set; }
-
+        public string Id { get; set; }
+        public string IdUsuario { get; set; }
+        public string Nombre { get; set; }
         public DateTime Fecha { get; set; }
-
-        public String Icono { get; set; }
+        public string Icono { get; set; }
     }
 }

@@ -4,15 +4,17 @@
              x:Class="BlocNotasCurso.View.Login">
 
   <StackLayout>
-    <Label Text="{Binding TituloLogin}"></Label>
-    <Entry Text="{Binding Usuario.Login}"></Entry>
+
+    <Label Text="{Binding TituloUsername}"></Label>
+    <Entry Text="{Binding Usuario.Username}"></Entry>
     <Label Text ="{Binding TituloPassword}"></Label>
     <Entry Text="{Binding Usuario.Password}"></Entry>
+
     <StackLayout Orientation="Horizontal">
       <Button Text="{Binding TituloIniciar}" Command="{Binding cmdLogin}"></Button>
       <Button Text="{Binding TituloRegistro}" Command="{Binding cmdRegistro}"></Button>
     </StackLayout>
+
   </StackLayout>
 
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
 </ContentPage>

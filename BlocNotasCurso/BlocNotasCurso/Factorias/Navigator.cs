@@ -10,15 +10,12 @@ namespace BlocNotasCurso.Factorias
         private readonly Lazy<INavigation> _navigation;
         private readonly IViewFactory _viewFactory;
         public INavigation Navigation { get { return _navigation.Value; } }
-        //private readonly IPage _page;
 
         public Navigator(Lazy<INavigation> navigation, IViewFactory viewFactory)
         {
             _navigation = navigation;
             _viewFactory = viewFactory;
-            // _page = page;
         }
-
 
         public async Task<IViewModel> PopAsync()
         {

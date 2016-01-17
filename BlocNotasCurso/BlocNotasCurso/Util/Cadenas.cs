@@ -8,9 +8,9 @@ namespace BlocNotasCurso.Util
 {
     public class Cadenas
     {
-        public static String UrlServicio = "https://blocnotas15.azure-mobile.net/";
+        public static string UrlServicio = "https://blocnotas15.azure-mobile.net";
 
-        public static String TokenServicio = "FgfWvrefHDqfWIczVXoSRezshJsrNI21";
+        public static string TokenServicio = "FgfWvrefHDqfWIczVXoSRezshJsrNI21";
 
     }
 }

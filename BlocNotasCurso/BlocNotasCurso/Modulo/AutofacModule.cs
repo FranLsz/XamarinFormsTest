@@ -11,6 +11,7 @@ using Xamarin.Forms;
 
 namespace BlocNotasCurso.Modulo
 {
+    // Registro de factorías
     class AutofacModule : Module
     {
         protected override void Load(ContainerBuilder builder)

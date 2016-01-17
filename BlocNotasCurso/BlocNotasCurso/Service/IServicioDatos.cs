@@ -12,9 +12,9 @@ namespace BlocNotasCurso.Service
 
         Task<Usuario> AddUsuario(Usuario us);
 
-        Task<Usuario> UpdateUsuario(Usuario us, String id);
+        Task<Usuario> UpdateUsuario(Usuario us, string id);
 
-        Task DeleteUsuario(String id);
+        Task DeleteUsuario(string id);
 
         #endregion
     }

@@ -62,8 +62,7 @@ namespace BlocNotasCurso.ViewModel.Base
         {
             var handler = PropertyChanged;
 
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(nombre));
+            handler?.Invoke(this, new PropertyChangedEventArgs(nombre));
         }
 
         public void SetState<T>(Action<T> action) where T : class, IViewModel

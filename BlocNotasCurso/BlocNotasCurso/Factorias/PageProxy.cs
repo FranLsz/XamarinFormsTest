@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace BlocNotasCurso.Factorias
+/*namespace BlocNotasCurso.Factorias
 {
     public class PageProxy : IPage
     {
@@ -14,4 +14,4 @@ namespace BlocNotasCurso.Factorias
 
         public INavigation Navigation { get { return _page().Navigation; } }
     }
-}
+}*/
