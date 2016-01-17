@@ -44,7 +44,7 @@ namespace BlocNotasCurso.Factorias
 
             // recupera la vista a partir del tipo de la vista
             var vista = _componentContext.Resolve(tipoVista) as Page;
-            if (action == null)
+            if (action != null)
                 viewModel.SetState(action);
 
             vista.BindingContext = viewModel;
@@ -54,10 +54,8 @@ namespace BlocNotasCurso.Factorias
 
         public Page Resolve<TViewModel>(TViewModel viewModel) where TViewModel : class, IViewModel
         {
-            // recupera el tipo de la vista (LoginView, AltaView)
             var tipoVista = _map[typeof(TViewModel)];
 
-            // recupera la vista a partir del tipo de la vista
             var vista = _componentContext.Resolve(tipoVista) as Page;
 
             vista.BindingContext = viewModel;

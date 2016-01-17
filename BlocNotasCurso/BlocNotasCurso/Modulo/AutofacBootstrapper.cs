@@ -8,7 +8,7 @@ namespace BlocNotasCurso.Modulo
     {
         public void Run()
         {
-            var builder = new ContainerBuilder();
+            var builder = new ContainerBuilder();   
             ConfigureContainer(builder);
             var cont = builder.Build();
             var viewFactory = cont.Resolve<IViewFactory>();
