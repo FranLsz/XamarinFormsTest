@@ -16,7 +16,7 @@ namespace BlocNotasCurso.ViewModel.Base
             Enabled = true;
         }
 
-        // cada vez que una propiedad se lanza el evento
+        // cada vez que una propiedad cambia de valor se lanza el evento
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Titulo { get; set; }
