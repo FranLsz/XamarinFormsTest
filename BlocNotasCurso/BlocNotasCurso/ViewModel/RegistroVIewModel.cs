@@ -10,6 +10,7 @@ namespace BlocNotasCurso.ViewModel
     public class RegistroViewModel : GeneralViewModel
     {
         public ICommand cmdRegistro { get; set; }
+
         public string UsernameLabel { get { return "Username"; } }
         public string PasswordLabel { get { return "Password"; } }
         public string NombreLabel { get { return "Nombre"; } }

@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlocNotasCurso.View.Login">
 
-  <StackLayout>
+  <StackLayout Padding="35">
 
     <Label Text="{Binding TituloUsername}"></Label>
     <Entry Text="{Binding Usuario.Username}"></Entry>
     <Label Text ="{Binding TituloPassword}"></Label>
     <Entry Text="{Binding Usuario.Password}"></Entry>
 
-    <StackLayout Orientation="Horizontal">
+    <StackLayout Orientation="Vertical">
       <Button Text="{Binding TituloIniciar}" Command="{Binding cmdLogin}"></Button>
       <Button Text="{Binding TituloRegistro}" Command="{Binding cmdRegistro}"></Button>
     </StackLayout>

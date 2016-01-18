@@ -14,7 +14,7 @@ namespace BlocNotasCurso.ViewModel
         public ICommand cmdRegistro { get; set; }
 
         public string TituloIniciar { get { return "Iniciar sesión"; } }
-        public string TituloRegistro { get { return "Nuevo usuario"; } }
+        public string TituloRegistro { get { return "Registro"; } }
         public string TituloUsername { get { return "Nombre de usuario"; } }
         public string TituloPassword { get { return "Contraseña"; } }
 
