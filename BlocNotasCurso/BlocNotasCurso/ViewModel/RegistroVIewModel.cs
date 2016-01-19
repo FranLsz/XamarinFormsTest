@@ -22,7 +22,7 @@ namespace BlocNotasCurso.ViewModel
             set { SetProperty(ref _usuario, value); }
         }
 
-        private Usuario _usuario;
+        private Usuario _usuario = new Usuario();
         public RegistroViewModel(INavigator navigator, IServicioDatos servicio) : base(navigator, servicio)
         {
             cmdRegistro = new Command(GuardarUsuario);

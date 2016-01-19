@@ -5,10 +5,8 @@
 
   <StackLayout Padding="35">
 
-    <Label Text="{Binding TituloUsername}"></Label>
-    <Entry Text="{Binding Usuario.Username}"></Entry>
-    <Label Text ="{Binding TituloPassword}"></Label>
-    <Entry Text="{Binding Usuario.Password}"></Entry>
+    <Entry Text="{Binding Usuario.Username}" Placeholder="{Binding TituloUsername}"></Entry>
+    <Entry Text="{Binding Usuario.Password}" Placeholder="{Binding TituloPassword}"></Entry>
 
     <StackLayout Orientation="Vertical">
       <Button Text="{Binding TituloIniciar}" Command="{Binding cmdLogin}"></Button>

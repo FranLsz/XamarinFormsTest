@@ -51,7 +51,7 @@ namespace BlocNotasCurso.ViewModel
                 if (true)
                 {
                     await _navigator.PopToRootAsync();
-                    await _navigator.PushAsync<PrincipalViewModel>(viewModel =>
+                    await _navigator.PushModalAsync<PrincipalViewModel>(viewModel =>
                     {
                         Titulo = "Pantalla principal";
                     });
