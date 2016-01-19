@@ -32,7 +32,9 @@ namespace BlocNotasCurso.ViewModel
         {
             try
             {
+
                 IsBusy = true;
+                _usuario.Foto = "";
                 var r = await _servicio.AddUsuario(_usuario);
                 if (r != null)
                     await _navigator.PushModalAsync<PrincipalViewModel>();

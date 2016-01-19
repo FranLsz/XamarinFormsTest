@@ -46,9 +46,8 @@ namespace BlocNotasCurso.ViewModel
             try
             {
                 IsBusy = true;
-                //var sd = new ServicioDatos();
-                // var us = await sd.ValidarUsuario(_usuario);
-                if (true)
+                var us = await _servicio.ValidarUsuario(_usuario);
+                if (us != null)
                 {
                     await _navigator.PopToRootAsync();
                     await _navigator.PushModalAsync<PrincipalViewModel>(viewModel =>
